@@ -5,36 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
     <link rel="stylesheet" href="./styles.css">
-    <script src="script.js"></script>
+    <script src="./script.js" defer></script>
 </head>
 <body>
     <header>
         <h1>My book collection</h1>
-        <button id="addButton" type="button">Add a book</button>
     </header>
     <main>
-        <div class="cards">
-            <button type="button">X</button>
-            <h3>The Alchemist</h3>
-            <img src="./assets/view-dashboard.svg">
-            <p>The Alchemist by Paulo Coelho, 200 pages. Not read yet.</p>
-            <div>
-                <input type="checkbox" id="haveRead">
-                <label for="haveRead">I read the book</label>
-            </div>
+        <button class="addButton" type="button">Add a book</button>
+        <div>
+            <!--<div class="cards" data-uniqueID="">
+                <button type="button" class="closeButton">X</button>
+                <h3>The Alchemist</h3>
+                <img src="./assets/view-dashboard.svg">
+                <p>The Alchemist by Paulo Coelho, 200 pages. Not read yet.</p>
+                <button type="button" class="haveRead">Read</button>
+            </div>-->
+            
         </div>
     </main>
     <footer>There is no copyright</footer>
     <dialog>
 		<form action="#" method="#">
             <label for="newTitle">Enter the book title:</label>
-            <input type="text" required>
+            <input type="text" id="newTitle" required>
             <label for="newAuthor">Enter the author name:</label>
-            <input type="text" required>
+            <input type="text" id="newAuthor" required>
             <label for="newPages">Enter the number of pages:</label>
-            <input type="number">
+            <input type="number" id="newPages" min="1">
+            <button type="button" id="updateBook">ADD</button>
         </form>
-		<button type="button">ADD</button>
 	</dialog>
 </body>
 </html>
