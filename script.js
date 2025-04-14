@@ -1,15 +1,14 @@
 const myCollection = [];
 
-function Book(title, author, pages, id) {
-    if(!new.target) {
-        throw Error("Use the 'new' operator to call the constructor");   
+class Book {
+    constructor(title, author, pages, id) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.isRead = false;
+        this.id = id;    
     }
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.isRead = false;
-    this.id = id;
-    this.info = function() {
+    info() {
         let reply;
         if(this.isRead) {
             reply = `${this.title} by ${this.author}, ${this.pages} pages long. Already read`;
@@ -19,9 +18,9 @@ function Book(title, author, pages, id) {
         }
         return reply;
     }
-}
-Book.prototype.haveRead = function() {
-    this.isRead = true;
+    haveRead() {
+        this.isRead = true;
+    }
 }
 
 function addBook() {
