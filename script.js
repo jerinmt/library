@@ -34,13 +34,33 @@ function addBook() {
     populateLibrary();
 }
 
+function checkEntry() {
+    let bookName = document.querySelector("#newTitle");
+    let authorName = document.querySelector("#newAuthor");
+    let pageCount = document.querySelector("#newPages");
+    if(!bookName.validity.valid) {
+        alert("A book name is expected!");
+        return false;
+    }
+    if(!authorName.validity.valid) {
+        alert("Enter the author's name!");
+        return false;
+    }
+    if(!pageCount.validity.valid) {
+        alert("Enter at least the approximate number of pages!");
+        return false;
+    }
+    return true;
+}
 
 document.querySelector(".addButton").addEventListener('click', ()=> {
     document.querySelector("dialog").showModal();
 });
 document.querySelector("#updateBook").addEventListener('click', ()=> {
-    addBook();
-    document.querySelector("dialog").close();
+    if(checkEntry()) {
+        addBook();
+        document.querySelector("dialog").close();
+    }
 });
 
 function populateLibrary() {

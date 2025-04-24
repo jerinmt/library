@@ -14,25 +14,18 @@
     <main>
         <button class="addButton" type="button">Add a book</button>
         <div>
-            <!--<div class="cards" data-uniqueID="">
-                <button type="button" class="closeButton">X</button>
-                <h3>The Alchemist</h3>
-                <img src="./assets/view-dashboard.svg">
-                <p>The Alchemist by Paulo Coelho, 200 pages. Not read yet.</p>
-                <button type="button" class="haveRead">Read</button>
-            </div>-->
             
         </div>
     </main>
     <footer>There is no copyright</footer>
     <dialog>
-		<form action="#" method="#">
+		<form>
             <label for="newTitle">Enter the book title:</label>
-            <input type="text" id="newTitle" required>
+            <input type="text" id="newTitle" required minlength="1">
             <label for="newAuthor">Enter the author name:</label>
-            <input type="text" id="newAuthor" required>
+            <input type="text" id="newAuthor" required minlength="1">
             <label for="newPages">Enter the number of pages:</label>
-            <input type="number" id="newPages" min="1">
+            <input type="number" id="newPages" required min="1">
             <button type="button" id="updateBook">ADD</button>
         </form>
 	</dialog>
